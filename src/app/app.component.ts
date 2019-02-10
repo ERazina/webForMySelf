@@ -10,6 +10,7 @@ export class AppComponent {
   canAddCar = false;
   carStatus = '';
   inputText = 'Дефолтный текст';
+  addNewCar = false;
 
   constructor() {
     setTimeout(() => {
@@ -18,7 +19,7 @@ export class AppComponent {
   }
 
   addCar() {
-    this.carStatus = 'Автомобиль добавлен';
+    this.addNewCar = true;
   }
 
   // (keyup.enter)="onKeyUp($event)"

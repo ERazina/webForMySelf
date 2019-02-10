@@ -5,12 +5,14 @@
       <app-cars></app-cars>
       <hr>
       <p>{{ carStatus }}</p>
-      <button [disabled]="!canAddCar" (click)="addCar()" class="btn btn-primary">Добавить машину</button>
+      <!-- <button [disabled]="!canAddCar" (click)="addCar()" class="btn btn-primary">Добавить машину</button> -->
       <hr>
-      <input type="text" #thisInput (input)="onKeyUp(thisInput.value)" class="form-contol" placeholder="Добавьте автомобиль">
-      <br>
-      <input type="text" [(ngModel)]="inputText">
-      <p>{{ inputText }}</p>
+      <button (click)="addCar()" class="btn btn-primary">Добавить авто</button>
+      <!-- <input type="text"> -->
+      <p *ngIf="addNewCar; else newCar">Автомобиль добавлен</p>
+      <ng-template #newCar>
+        <p>Автомобиль не добавлен</p>
+      </ng-template>
     </div>
   </div>
 </div>
