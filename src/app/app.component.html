@@ -2,15 +2,13 @@
   <div class="row">
     <div class="col-xs-12">
       <app-cars></app-cars>
-      <app-cars></app-cars>
       <hr>
       <p>{{ carStatus }}</p>
       <button [disabled]="!canAddCar" (click)="addCar()" class="btn btn-primary">Добавить машину</button>
       <hr>
-      <input type="text" #thisInput (input)="onKeyUp(thisInput.value)" class="form-contol" placeholder="Добавьте автомобиль">
-      <br>
-      <input type="text" [(ngModel)]="inputText">
-      <p>{{ inputText }}</p>
+      <input type="text" class="form-contol" (keyup.enter)="addCar($event);" placeholder="Добавьте автомобиль">
+      <p>{{carName}}</p>
+      <div *ngFor="let car of cars">{{car.name}}, {{car.age}}</div>
     </div>
   </div>
 </div>

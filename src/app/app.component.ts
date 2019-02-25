@@ -10,6 +10,13 @@ export class AppComponent {
   canAddCar = false;
   carStatus = '';
   inputText = 'Дефолтный текст';
+  cars = [
+    {name: 'Audi', age: 2017},
+    {name: 'BMW', age: 2019},
+    {name: 'Mini', age: 2019}
+  ];
+  // public car = '';
+  carName = 'Дефолтное значение';
 
   constructor() {
     setTimeout(() => {
@@ -17,8 +24,10 @@ export class AppComponent {
     }, 4000);
   }
 
-  addCar() {
-    this.carStatus = 'Автомобиль добавлен';
+  addCar(event) {
+    this.carName = event.target.value;
+    // this.cars.push(car);
+    // this.cars = '';
   }
 
   // (keyup.enter)="onKeyUp($event)"
